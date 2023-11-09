@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+//get data from form  
+
+$name = $_POST['name'];
+$email= $_POST['email'];
+$number= $_POST['number'];
+$education= $_POST['education'];
+$yop= $_POST['yop'];
+$gender= $_POST['gender'];
+
+$to = "venupenikalapati@gmail.com";
+$subject = "Mail From website";
+$txt ="Name = ". $name . "\r\n  Email = " . $email . "\r\n Number =" . $number ."\r\n  Education =" . $education ."\r\n  Yop =" . $yop ."\r\n  Gender =" . $gender;
+$headers = "From: venupenikalapati@gmail.com" . "\r\n" .
+"CC: somebodyelse@example.com";
+if($email!=NULL){
+    mail($to,$subject,$txt,$headers);
+}
+//redirect
+header("Location:thankyou.html");
+?>
+</body>
+</html>
